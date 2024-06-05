@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  text-decoration: none;
+  list-style: none;
+}
+:root {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+
+  --color-font-click: #E1E1E6;
+  --color-font-heading:#C4C4CC;
+  --color-font-base: #E1E1E6;
+  --font-button-hover: #02799D;
+  --button-bg: #FFFF;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  background-image: url(./assets/mountains-universe-1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+nav {
+  padding: 5.0rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+nav a {
+  color: var(--color-font-base);
+  font-weight: 400;
+  transition: all .3s;
+}
+
+nav a:hover {
+  font-weight: bold;
+  transform: scale(1.7);
+}
+
+.home-wrapper {
+  display: grid;
+  margin-top: 10rem;
+  place-items: center;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 4.8rem;
+  line-height: 6rem;
+  color:var(--color-font-base);
+}
+
+.home a {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  text-transform: uppercase;
+  color: var(--button-bg);
+  
+  padding: 1.2rem 3.2rem;
+  
+  border: 2px solid var(--button-bg);
+  border-radius: .5rem;
+  cursor: pointer;
+  background: transparent;
+  transition: all .3s;
+}
+.home a:hover {
+  transform: scale(2);
+  background: var(--button-bg);
+  color: var(--font-button-hover)
+}
+
+/*Universe*/
+.universe-wrapper, .explore-wrapper {
+  margin-top: 5.0rem;
+  max-width: 64.8rem;
+  margin-left: 6rem;
+}
+
+.universe-wrapper p, .explore-wrapper p{
+  margin-top: 1.6rem;
+  line-height: 3rem;
+  font-weight: 400;
+  
+  color: var(--color-font-base);
+}
+
+/**/
+nav ul li:nth-child(1) {
+  animation: fromTop 1.2s;
+}
+
+nav ul li:nth-child(2) {
+  animation: fromTop 1.2s .1s backwards;
+}
+nav ul li:nth-child(3) {
+  animation: fromTop 1.2s .2s backwards;
+}
+nav ul li:nth-child(4) {
+  animation: fromTop 1.2s .3s backwards;
+}
+
+h1,p,a {
+  animation: samePlace 1s backwards;
+}
+
+/* Animations */
+@keyframes fromTop {
+  from {
+      opacity: 0;
+      transform: translateY(-7rem);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes samePlace {
+  from {
+      opacity: 0;
+      transform: translateX(0);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@media (max-width: 650px) {
+  nav ul {
+    gap: 2rem;
+  }
+  .home {
+    padding: 0 2rem;
+    text-align: center;
+    
+  }
+  .universe-wrapper, .explore-wrapper {
+    margin-top: 0;
+    max-width: 30rem;
+    padding-bottom: 3rem;
+  }
+}
